@@ -1,0 +1,205 @@
+/*웹폰트*/
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*기본*/
+body {
+    font-family: 'MaruBuri-Regular';
+    font-size: 1em;
+}
+
+
+/*전체*/
+
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 60px;
+
+    background-color: #fafafa;
+}
+
+/*헤더*/
+
+.header {
+    width: 100%;
+    height: 60px;
+
+    position: fixed;
+
+    border-bottom: 0.5px solid #dbdbdb;
+
+    background-color: white;
+}
+
+.header-item {
+    width: 975px;
+    height: 60px;
+
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    margin: auto;
+}
+
+.logo {
+    width: 333.5px;
+}
+
+.find {
+    width: 268px;
+
+    /*background-color: aquamarine;*/
+}
+
+input#search {
+    width: 268px;
+    height: 36px;
+
+    background: url('./img/magnifier.png') no-repeat #efefef;
+    background-position: 14px;
+    background-size: 14px;
+    padding-left: 35px;
+
+    color: #8e8e8e;
+
+    border-radius: 5px;
+    border: transparent;
+}
+
+input#search:focus {
+    background: #efefef;
+    padding-left: 10px;
+    outline: none;
+}
+
+
+.menu {
+    width: 333.5px;
+
+    justify-content: right;
+    display: flex;
+
+    /*background-color: lightblue;*/
+}
+
+.menu > div {
+    width: 24px;
+    height: 24px;
+    margin-left: 22px;
+
+    /*background-color: #8e8e8e;*/
+}
+
+.menu #home {
+    background-image: url('./img/home.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.menu #direct {
+    background-image: url('./img/envelope.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.menu #write {
+    background-image: url('./img/upload.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.menu #explore {
+    background-image: url('./img/search.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.menu #activity {
+    background-image: url('./img/like.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.menu #profile {
+    background-image: url('./img/profile.jpg');
+    background-position: center;
+    background-size: cover;
+
+    bo
+}
+
+/*본문*/
+.main {
+    width: 935px;
+    margin: auto;
+    padding-top: 30px;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    /*background-color: yellow;*/
+}
+
+.main-left {
+    width: 614px;
+    height: 1000px;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+
+    background-color: plum;
+}
+
+.article {
+    background-color: white;
+    margin-bottom: 24px;
+}
+
+.main-right {
+    width: 321px;
+    height: 500px;
+
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    background-color: skyblue;
+}
+
+.footer {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    color: #8e8e8e;
+    font-size: 0.9em;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+
+    background-color: lightsteelblue;
+}
+
+/*미디어쿼리*/
+
+/*985px 이하일 때 모바일 환경으로*/
+/*헤더: 검색창 사라지고 아이콘이 로고 옆으로*/
+/*오른쪽 프로필칸 사라짐 / 푸터 가장 아래로*/
