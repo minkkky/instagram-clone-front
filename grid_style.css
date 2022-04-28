@@ -182,11 +182,13 @@ input#search:focus {
     grid-row-start: 1;
     grid-row-end: 2;
 
-    background-color: skyblue;
+    /*background-color: skyblue;*/
 }
 
 .profile {
     height: 400px;
+
+    padding: 20px;
 }
 
 .footer {
@@ -201,7 +203,7 @@ input#search:focus {
     padding-left: 10px;
     padding-bottom: 30px;
 
-    background-color: lightsteelblue;
+    /*background-color: lightsteelblue;*/
 }
 
 /*미디어쿼리*/
