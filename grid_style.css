@@ -401,12 +401,11 @@ input#reply:focus {
     }
 
     .logo {
-        width: 120px;
+        width: 150px;
     }
 
-
     .menu {
-        width: 300px;
+        width: 276px;
         justify-content: right;
         display: flex;
     }
@@ -440,6 +439,8 @@ input#reply:focus {
         width: 100%;
         padding-top: 30px;
         margin: auto;
+
+        border-top: 0.5px solid #dbdbdb;
     }
 
     .follow {
