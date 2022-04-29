@@ -29,9 +29,11 @@
 
     <div class="header">
         <div class="header-item">
-            <div class="logo">
-                <a href="#top"><img src="./img/logo.png"></a>
-            </div>
+            <a href="#top">
+                <div class="logo">
+                    <img src="./img/logo.png">
+                </div>
+            </a>
             <div class="find">
                 <input type="text" class="search" id="search" placeholder="검색">
             </div>
@@ -40,7 +42,7 @@
                 <div id="direct"></div>
                 <div id="write"></div>
                 <div id="explore"></div>
-                <div id="activity"></div>
+                <div id="like"></div>
                 <div id="profile"></div>
             </div>
         </div>
@@ -51,13 +53,45 @@
         <div class="main-left">
 
             <div class="article">
-                게시물 1
+                <div class="card">
+<!--                    게시글 헤더-->
+                    <div class="card-body">
+                        <div class="card_header">
+                            <div class="human"></div>
+                            <div class="nickname">sunset_001</div>
+                        </div>
+                        <div id="more"></div>
+                    </div>
+<!--                    게시글 이미지-->
+                    <img src="./img/post_3.jpg" class="card-img-top post_img">
+<!--                    게시글 이미지 하단 아이콘-->
+                    <div class="post_icon">
+                        <div class="post_icon_left">
+                            <div id="like"></div>
+                            <div id="comment"></div>
+                            <div id="direct"></div>
+                        </div>
+                        <div class="post_icon_right">
+                            <div id="bookmark"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <p>좋아요 111개<br><br>아이디 메시지</p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            댓글 영역 <input> 게시
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="article">
-                게시물 2
+                2
             </div>
             <div class="article">
-                게시물 3
+                3
             </div>
             게시물 보일 곳
         </div>

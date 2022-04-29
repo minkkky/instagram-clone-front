@@ -29,6 +29,7 @@ body {
     height: 60px;
 
     position: fixed;
+    z-index: 1;
 
     border-bottom: 0.5px solid #dbdbdb;
 
@@ -40,7 +41,6 @@ body {
     height: 60px;
 
     display: flex;
-    /*justify-content: space-between;*/
     align-items: center;
 
     padding-left: 20px;
@@ -55,8 +55,6 @@ body {
 
 .find {
     width: 268px;
-
-    /*background-color: aquamarine;*/
 }
 
 input#search {
@@ -86,16 +84,12 @@ input#search:focus {
 
     justify-content: right;
     display: flex;
-
-    /*background-color: lightblue;*/
 }
 
 .menu > div {
     width: 24px;
     height: 24px;
     margin-left: 22px;
-
-    /*background-color: #8e8e8e;*/
 }
 
 .menu #home {
@@ -105,24 +99,24 @@ input#search:focus {
 }
 
 .menu #direct {
-    background-image: url('./img/envelope.png');
+    background-image: url('./img/direct.png');
     background-position: center;
     background-size: cover;
 }
 
 .menu #write {
-    background-image: url('./img/upload.png');
+    background-image: url('./img/plus.png');
     background-position: center;
     background-size: cover;
 }
 
 .menu #explore {
-    background-image: url('./img/search.png');
+    background-image: url('./img/compass.png');
     background-position: center;
     background-size: cover;
 }
 
-.menu #activity {
+.menu #like {
     background-image: url('./img/like.png');
     background-position: center;
     background-size: cover;
@@ -132,11 +126,9 @@ input#search:focus {
     background-image: url('./img/profile.jpg');
     background-position: center;
     background-size: cover;
-
-    bo
 }
 
-/*본문*/
+/*본문(게시글)*/
 .main {
     width: 935px;
     margin: auto;
@@ -149,8 +141,6 @@ input#search:focus {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    /*background-color: yellow;*/
 }
 
 .main-left {
@@ -168,6 +158,106 @@ input#search:focus {
 .article {
     background-color: white;
     margin-bottom: 24px;
+    z-index: -1;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.card_header {
+    display: flex;
+    align-content: center;
+}
+
+.card_header .human {
+    width: 32px;
+    height: 32px;
+    background-image: url('./img/profile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.card_header .nickname {
+    font-weight: 600;
+    width: 200px;
+    height: 26px;
+    padding-left: 15px;
+}
+
+#more {
+    width: 24px;
+    height: 24px;
+    background-image: url('./img/more.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.post_icon {
+    height: 40px;
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.post_icon_left {
+    width: 150px;
+    height: 24px;
+
+    display: flex;
+    justify-content: left;
+
+    padding-left: 15px;
+}
+
+.post_icon_right {
+    height: 24px;
+}
+
+.post_icon_left > div {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 15px;
+}
+
+.post_icon_right > div {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 15px;
+}
+
+.post_icon_left #like {
+    background-image: url('./img/like.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.post_icon_left #comment {
+    background-image: url('./img/chat.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.post_icon_left #direct {
+    background-image: url('./img/direct.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.post_icon_right #bookmark {
+    background-image: url('./img/bookmark.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.post_icon .img_bar {
+    width: 420px
 }
 
 .main-right {
@@ -181,33 +271,79 @@ input#search:focus {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-
-    /*background-color: skyblue;*/
 }
 
 .profile {
     height: 400px;
-
     padding: 20px;
 }
 
 .footer {
-    /*grid-column-start: 3;*/
-    /*grid-column-end: 4;*/
-    /*grid-row-start: 2;*/
-    /*grid-row-end: 3;*/
-
     color: #8e8e8e;
     font-size: 0.9em;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 30px;
-
-    /*background-color: lightsteelblue;*/
 }
 
 /*미디어쿼리*/
 
-/*985px 이하일 때 모바일 환경으로*/
-/*헤더: 검색창 사라지고 아이콘이 로고 옆으로*/
-/*오른쪽 프로필칸 사라짐 / 푸터 가장 아래로*/
+@media (max-width: 985px) {
+    /*985px 이하일 때 모바일 환경으로*/
+    /*헤더: 검색창 사라지고 아이콘이 로고 옆으로*/
+    .header-item {
+        max-width: 975px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .find {
+        display: none;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+
+    .menu {
+        width: 333.5px;
+        justify-content: right;
+        display: flex;
+    }
+
+    .menu > div {
+        width: 24px;
+        height: 24px;
+        margin-left: 22px;
+    }
+
+    /*오른쪽 프로필칸 사라짐 / 푸터 가장 아래로*/
+    /*본문(게시글)*/
+    .main {
+        max-width: 935px;
+        width: 100%;
+        min-width: 413px;
+        height: auto;
+        padding-top: 30px;
+        display: block;
+    }
+
+    .main-left {
+        max-width: 614px;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    .main-right {
+        max-width: 614px;
+        width: 100%;
+        padding-top: 30px;
+        margin: auto;
+    }
+
+    .profile {
+        display: none;
+    }
+}
