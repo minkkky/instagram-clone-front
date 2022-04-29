@@ -6,6 +6,73 @@
     font-style: normal;
 }
 
+/*아이콘*/
+.home {
+    background-image: url('./img/home.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.direct {
+    background-image: url('./img/direct.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.write {
+    background-image: url('./img/plus.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.explore {
+    background-image: url('./img/compass.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.like {
+    background-image: url('./img/like.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.profile {
+    background-image: url('./img/profile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.dot-dot-dot {
+    width: 24px;
+    height: 24px;
+    background-image: url('./img/more.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.comment {
+    background-image: url('./img/chat.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.bookmark {
+    background-image: url('./img/bookmark.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.emoji {
+    width: 24px;
+    height: 24px;
+
+    background-image: url('./img/emoji.png');
+    background-position: center;
+    background-size: cover;
+}
+
+
 /*기본*/
 body {
     font-family: 'MaruBuri-Regular';
@@ -13,9 +80,23 @@ body {
     background-color: #fafafa;
 }
 
+a {text-decoration: none;color: #347eb2;}
 
-/*전체*/
+.bold {
+    font-weight: 600;
+}
+.id {font-weight: 600;}
 
+.gray_s {
+    color: #dbdbdb;
+    font-size: 0.7em;
+}
+
+.gray_r {
+    color: #dbdbdb;
+}
+
+/*전체 영역*/
 .wrap {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -23,7 +104,6 @@ body {
 }
 
 /*헤더*/
-
 .header {
     width: 100%;
     height: 60px;
@@ -92,43 +172,7 @@ input#search:focus {
     margin-left: 22px;
 }
 
-.menu #home {
-    background-image: url('./img/home.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.menu #direct {
-    background-image: url('./img/direct.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.menu #write {
-    background-image: url('./img/plus.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.menu #explore {
-    background-image: url('./img/compass.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.menu #like {
-    background-image: url('./img/like.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.menu #profile {
-    background-image: url('./img/profile.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-/*본문(게시글)*/
+/*본문 전체*/
 .main {
     width: 935px;
     margin: auto;
@@ -143,6 +187,7 @@ input#search:focus {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/*게시글 공간 (왼쪽)*/
 .main-left {
     width: 614px;
     height: 1000px;
@@ -151,12 +196,11 @@ input#search:focus {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 4;
-
-    background-color: plum;
 }
 
+/*게시글*/
 .article {
-    background-color: white;
+    /*background-color: white;*/
     margin-bottom: 24px;
     z-index: -1;
 }
@@ -185,14 +229,6 @@ input#search:focus {
     width: 200px;
     height: 26px;
     padding-left: 15px;
-}
-
-#more {
-    width: 24px;
-    height: 24px;
-    background-image: url('./img/more.png');
-    background-position: center;
-    background-size: cover;
 }
 
 .post_icon {
@@ -232,34 +268,42 @@ input#search:focus {
     margin-right: 15px;
 }
 
-.post_icon_left #like {
-    background-image: url('./img/like.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.post_icon_left #comment {
-    background-image: url('./img/chat.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.post_icon_left #direct {
-    background-image: url('./img/direct.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.post_icon_right #bookmark {
-    background-image: url('./img/bookmark.png');
-    background-position: center;
-    background-size: cover;
-}
-
 .post_icon .img_bar {
     width: 420px
 }
 
+.box {
+    padding: 15px
+    /*display: flex;*/
+}
+
+.content {
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input#reply {
+    width: calc(100% - 94px);
+    color: #8e8e8e;
+    font-size: 0.9em;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    border: transparent;
+}
+
+input#reply:focus {
+    outline: none;
+}
+
+.btn-outline-info {
+    margin-left: 10px;
+}
+
+/*프로필 공간 (오른쪽)*/
 .main-right {
     width: 321px;
     height: auto;
@@ -273,9 +317,21 @@ input#search:focus {
     grid-row-end: 2;
 }
 
-.profile {
+.follow {
     height: 400px;
     padding: 20px;
+}
+
+.my-info .profile {
+    width: 52px;
+    height: 52px;
+    margin-left: 22px;
+}
+
+.follow-info .profile {
+    width: 36px;
+    height: 36px;
+    margin-left: 22px;
 }
 
 .footer {
@@ -286,7 +342,7 @@ input#search:focus {
     padding-bottom: 30px;
 }
 
-/*미디어쿼리*/
+/*모바일 대응*/
 
 @media (max-width: 985px) {
     /*985px 이하일 때 모바일 환경으로*/
