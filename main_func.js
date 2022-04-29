@@ -1,40 +1,27 @@
-$(document).ready(function () {
+// ... 버튼 모달창 열기
+function popOpen() {
 
-    $('.box').each(function () {
-        var content = $(this).children('.content');
-        // var content_cut = content_full.split('"'>',2);
-        // var content = content_full.split('>', 2);
-        var content_txt = content.text();
-        var content_txt_short = content_txt.substring(0, 70) + "...";
-        var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
+        var modalPop = $('.modal-wrap');
+        var modalBg = $('.modal-bg');
 
+        $(modalPop).show();
+        $(modalBg).show();
 
-        $(this).append(btn_more);
+        $('html').css({
+            overflow: 'hidden',
+            height: 'auto'
+        });
 
-        if (content_txt.length >= 70) {
-            content.html(content_txt_short)
+    }
 
-        } else {
-            btn_more.hide()
-        }
+// ... 버튼 모달창 닫기
+function popClose() {
+    var modalPop = $('.modal-wrap');
+    var modalBg = $('.modal-bg');
 
-        btn_more.click(toggle_content);
-        // 아래 bind가 안 되는 이유는??
-        // btn_more.bind('click',toggle_content);
+    $(modalPop).hide();
+    $(modalBg).hide();
 
-        function toggle_content() {
-            if ($(this).hasClass('short')) {
-                // 접기 상태
-                $(this).html('더보기');
-                content.html(content_txt_short)
-                $(this).removeClass('short');
-            } else {
-                // 더보기 상태
-                $(this).html('접기');
-                content.html(content_txt);
-                $(this).addClass('short');
+    $('html').removeAttr('style');
 
-            }
-        }
-    });
-});
+}

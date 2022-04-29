@@ -454,3 +454,48 @@ input#reply:focus {
         display: none;
     }
 }
+
+/*모달*/
+
+/*버튼 클래스*/
+.btn-open-popup {
+    border: none;
+    background-color: transparent;
+}
+
+/*모달 배경 설정*/
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,0.3); /*색상코드 세자리 + 투명도*/
+    z-index: 999;
+
+    display: none;
+}
+
+/*모달창 틀*/
+.modal-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+
+    width: 400px;
+    height: 336px;
+
+    background-color: white;
+
+    display: none;
+}
+
+.btn-in-popup {
+    width: 400px;
+    height: 48px;
+
+    background-color: transparent;
+    border: 0.2px solid #dbdbdb;
+}
