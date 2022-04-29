@@ -41,6 +41,8 @@
     background-image: url('./img/profile.jpg');
     background-position: center;
     background-size: cover;
+
+    border-radius: 50%;
 }
 
 .dot-dot-dot {
@@ -80,20 +82,35 @@ body {
     background-color: #fafafa;
 }
 
-a {text-decoration: none;color: #347eb2;}
+a {
+    text-decoration: none;
+    color: #347eb2;
+}
 
 .bold {
     font-weight: 600;
 }
-.id {font-weight: 600;}
+
+.id {
+    font-weight: 600;
+    line-height: 1.1em;
+}
 
 .gray_s {
-    color: #dbdbdb;
-    font-size: 0.7em;
+    color: #b4b4b4;
+    font-weight: 300;
+    font-size: 0.8em;
 }
 
 .gray_r {
-    color: #dbdbdb;
+    color: #b4b4b4;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.gray {
+    color: #b4b4b4;
+    font-weight: 600;
 }
 
 /*전체 영역*/
@@ -175,6 +192,9 @@ input#search:focus {
 /*본문 전체*/
 .main {
     width: 935px;
+    min-height: 600px;
+    height: auto;
+
     margin: auto;
     padding-top: 30px;
 
@@ -190,7 +210,7 @@ input#search:focus {
 /*게시글 공간 (왼쪽)*/
 .main-left {
     width: 614px;
-    height: 1000px;
+    height: auto;
 
     grid-column-start: 1;
     grid-column-end: 2;
@@ -200,7 +220,6 @@ input#search:focus {
 
 /*게시글*/
 .article {
-    /*background-color: white;*/
     margin-bottom: 24px;
     z-index: -1;
 }
@@ -224,10 +243,11 @@ input#search:focus {
     background-size: cover;
 }
 
-.card_header .nickname {
+.nickname {
     font-weight: 600;
     width: 200px;
     height: 26px;
+    line-height: 1em;
     padding-left: 15px;
 }
 
@@ -313,13 +333,15 @@ input#reply:focus {
 
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
 }
 
 .follow {
-    height: 400px;
     padding: 20px;
+}
+
+.my-info {
+    display: flex;
+    align-items: center;
 }
 
 .my-info .profile {
@@ -328,17 +350,42 @@ input#reply:focus {
     margin-left: 22px;
 }
 
+.follow-info {
+    padding-top: 30px;
+}
+
 .follow-info .profile {
-    width: 36px;
-    height: 36px;
-    margin-left: 22px;
+    width: 34px;
+    height: 34px;
+    margin-left: 20px;
+
+    border-radius: 50%;
+}
+
+.follow-info-header {
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.follow-info-header .follow-btn {
+    width: 52px;
+}
+
+.follow-info-1 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.follow-btn {
+    width: 40px;
 }
 
 .footer {
     color: #8e8e8e;
     font-size: 0.9em;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-left: 30px;
     padding-bottom: 30px;
 }
 
@@ -350,11 +397,7 @@ input#reply:focus {
     .header-item {
         max-width: 975px;
         width: 100%;
-        justify-content: space-between;
-    }
-
-    .find {
-        display: none;
+        justify-content: space-around;
     }
 
     .logo {
@@ -363,7 +406,7 @@ input#reply:focus {
 
 
     .menu {
-        width: 333.5px;
+        width: 300px;
         justify-content: right;
         display: flex;
     }
@@ -399,7 +442,14 @@ input#reply:focus {
         margin: auto;
     }
 
-    .profile {
+    .follow {
+        display: none;
+    }
+}
+
+@media (max-width: 614px) {
+    /*검색창은 이때 없어지게 조정할 것*/
+    .find {
         display: none;
     }
 }
