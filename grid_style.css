@@ -397,11 +397,11 @@ input#reply:focus {
     .header-item {
         max-width: 975px;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .logo {
-        width: 150px;
+        width: 100px;
     }
 
     .menu {
@@ -448,12 +448,21 @@ input#reply:focus {
     }
 }
 
-@media (max-width: 614px) {
+@media (max-width: 754px) {
     /*검색창은 이때 없어지게 조정할 것*/
     .find {
         display: none;
     }
 }
+
+@media (max-width: 614px) {
+    /*댓글창은 이때 없어지게 조정할 것*/
+    .list-group-flush {
+        display: none;
+    }
+}
+
+
 
 /*모달*/
 
@@ -461,6 +470,21 @@ input#reply:focus {
 .btn-open-popup {
     border: none;
     background-color: transparent;
+}
+
+.btn-in-popup {
+    width: 400px;
+    height: 48px;
+
+    background-color: white;
+    /*border: 0.2px solid #dbdbdb;*/
+    border: none;
+    border-radius: 10px;
+}
+
+.upset {
+    color: red;
+    font-weight: 600;
 }
 
 /*모달 배경 설정*/
@@ -492,10 +516,20 @@ input#reply:focus {
     display: none;
 }
 
-.btn-in-popup {
-    width: 400px;
-    height: 48px;
+/*접기*/
 
-    background-color: transparent;
-    border: 0.2px solid #dbdbdb;
+.feed-information .feed-content {
+  display: inline-block;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+/*이걸 적용하면 본문 더보기가 될 것 같은데 어떻게 적용하나?*/
+
+.feed-information .feed-content .more {
+  display: inline;
+  white-space: normal;
 }
